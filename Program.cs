@@ -1,39 +1,59 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 
-namespace Practicecodes
+namespace samples
 {
     class Program
     {
         static void Main(string[] args)
         {
-            Console.Write("Object oriented programming in C# \n");
-            Console.Write("--------------------------------- \n");
-            //StudentMarklist is Model here and Marks is list
-            List<StudentMarklist> Marks = new List<StudentMarklist>();
-           
-            Marks.Add(new StudentMarklist { Roll_Number = 101, Name = "Vanitha", Marks = 40, subject = "Maths" });
-            Marks.Add(new StudentMarklist { Roll_Number = 102, Name = "Thejasri", Marks = 10, subject = "Science" });
-            Marks.Add(new StudentMarklist { Roll_Number = 103, Name = "Pavin", Marks = 70, subject = "Maths" });
-            Marks.Add(new StudentMarklist { Roll_Number = 104, Name = "Seeralan", Marks = 80, subject = "Maths" });
-            //Marks is list here
-            foreach(StudentMarklist student in Marks)
-            {
-                Console.Write(student.Roll_Number + " | " + student.Name + "    | " + student.Marks + " | " + student.subject + " | \n");
-                                  
-            }
-            List<StudentMarklist> failedstudent = new List<StudentMarklist>();
-            failedstudent = Marks.Where(n => n.Marks < 30).ToList();
-            /*foreach(StudentMarklist student1 in failedstudent)
-            {
-                Console.Write(student1.Roll_Number + " | " + student1.Name + " | " + student1.Marks + " | " + student1.subject + " | ");
-            }*/
-            Console.WriteLine("\n\n");
-            Console.WriteLine("failed student\n\n\n");
-            failedstudent.ForEach(s => Console.Write(s.Roll_Number + "     | " + s.Name + " | " + s.Marks + " | " + s.subject + " | \n"));
+            string sayHello = "Hello World!";
+            Console.WriteLine(sayHello);
+            sayHello = sayHello.Replace("Hello", "Greetings");
+            Console.WriteLine(sayHello);
+            //Replace, Toupper and tolower case methods
+            string myname = "vanithaseeralan";
+            Console.WriteLine(myname.Replace("seeralan", ""));
+            Console.WriteLine($"{myname.LongCount()} and {myname.Length}");
 
-            Console.ReadKey();
+            Console.WriteLine(myname.ToUpper());
+            Console.WriteLine(myname.ToLower());
+            //Contains method
+            string check, songLyrics = "Check this lyrics contains letters that want to check in boolean format";
+            check = "want to check this text has any word for testing";
+            Console.WriteLine(songLyrics.Contains("goodbye"));
+            Console.WriteLine(songLyrics.Contains("greetings"));
+            Console.WriteLine(check.Contains("testing"));
+            Console.WriteLine(check.Contains("wanted"));
+            Console.WriteLine(check.StartsWith("want"));
+            Console.WriteLine(check.EndsWith("testing"));
+            //Numbers and its calculations
+            int a = 7;
+            int b = 4;
+            int c = 3;
+            int d = (a + b) / c;
+            int e = (a + b) % c;
+            Console.WriteLine($"quotient: {d}");
+            Console.WriteLine($"remainder: {e}");
+
+            int max = int.MaxValue;
+            int min = int.MinValue;
+            Console.WriteLine($"The range of integers is {min} to {max}");
+            int what = max + 3;
+            int what1 = min + 3;
+            Console.WriteLine($"An example of overflow: {what} and {what1}");
+            double max1 = double.MaxValue;
+            double min1 = double.MinValue;
+            Console.WriteLine($"The range of double is {min1} to {max1}");
+
+            decimal min2 = decimal.MinValue;
+            decimal max2 = decimal.MaxValue;
+            Console.WriteLine($"The range of the decimal type is {min2} to {max2}");
+            double radius = 2.50;
+            double area = Math.PI * radius * radius;
+            Console.WriteLine(area);
+
+
         }
     }
 }
